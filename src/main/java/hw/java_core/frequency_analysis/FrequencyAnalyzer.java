@@ -8,7 +8,7 @@ public class FrequencyAnalyzer {
     Map<T, Integer> map = new HashMap<>();
 
     for (T element: array) {
-      map.put(element, map.getOrDefault(element, 0) + 1);
+      map.merge(element, 1, Integer::sum);
     }
     return map;
   }
